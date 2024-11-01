@@ -1,38 +1,113 @@
+/* Base Styles */
+* {
+  box-sizing: border-box; /* Ensures padding and margin don't affect width */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html {
+  background-image: url('https://media.istockphoto.com/id/1007768414/photo/blue-sky-with-bright-sun-and-clouds.jpg?s=612x612&w=0&k=20&c=MGd2-v42lNF7Ie6TtsYoKnohdCfOPFSPQt5XOz4uOy4=');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
 .App {
+  background-color: rgba(226, 226, 226, 0.6); /* Slightly opaque to allow background image to show through */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+  width: 90%; /* Responsive width */
+  max-width: 500px; /* Limits the max width */
+  min-height: 440px;
+  margin: 32px auto; /* Centering the app on the page */
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Search Input */
+.city-search {
+  width: 100%; /* Full width */
+  max-width: 300px; /* Limits width for larger screens */
+  margin: 0 auto;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  background-color: white;
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
+
+.city-search:focus {
+  transition: width 0.4s ease-in-out;
+}
+
+/* City name and date */
+.city-name,
+.date {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.icon-temp {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1e2432;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.des-wind {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Error message */
+.error-message {
+  font-size: 1.2rem;
+  color: rgb(20, 2, 2);
+  margin-top: 20px;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .app-name {
+    font-size: 1.75rem;
+  }
+
+  .city-search {
+    max-width: 90%; /* Full width on smaller screens */
+    padding: 10px;
+  }
+
+  .icon-temp {
+    font-size: 2.5rem;
+  }
+
+  .des-wind {
+    font-size: 0.9rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 480px) {
+  .app-name {
+    font-size: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .city-search {
+    width: 100%; /* Full width on very small screens */
+  }
+
+  .icon-temp {
+    font-size: 2rem;
+  }
+
+  .des-wind {
+    font-size: 0.85rem;
   }
 }
